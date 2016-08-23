@@ -1,12 +1,1 @@
-[
-    {
-        "name":"apple1",
-        "price":"21",
-        "stock":"12"
-    },
-    {
-        "name":"apple2",
-        "price":"21",
-        "stock":"12"
-    }
-]
+[{"name":"apple1","price":"123","stock":"1232"},{"name":"poop","price":"112","stock":"245"},{"name":"poop","price":"112","stock":"245"}]
