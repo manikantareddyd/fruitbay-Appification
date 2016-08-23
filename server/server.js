@@ -13,7 +13,7 @@ app.get("/getData",function(req,res){
 app.get("/delEntry",function(req,res){
   // res.send("LUL");
   var obj=JSON.parse(fs.readFileSync('./data/data.json').toString());
-  console.log(obj);
+  // console.log(obj);
   var name = req.query.n;
   var i = 0;
   for(i=0;i<obj.length;i++)
@@ -36,7 +36,7 @@ app.get("/delEntry",function(req,res){
 app.get("/modifyEntry",function(req,res){
   // res.send("LUL");
   var obj=JSON.parse(fs.readFileSync('./data/data.json').toString());
-  console.log(obj);
+  // console.log(obj);
   var name = req.query.n;
   var price = req.query.p;
   var stock = req.query.s;
@@ -53,7 +53,7 @@ app.get("/modifyEntry",function(req,res){
   if(bool)
   {
     //Fruit already present. Edit the same entry.
-    console.log(obj[i]);
+    // console.log(obj[i]);
     obj[i]["price"] = price;
     obj[i]["stock"] = stock;
   }

@@ -46,6 +46,7 @@ $.ajax(settings).fail(function (response){
             <h3><b>Add or Modify a Fruit Entry</b></h3>
             <h5><I>It is mandatory to fill all fields</I></h5>
             <h5><I>If a fruit name already exists, it'll just be updated. Else a new entry is created.</I></h5>
+            <h6><I>Fruit Names are Case Sensitive</I></h6>
             <div class="form-group">
               <form action="/modifyEntry" method="get">
                 <label>Name :</label>
@@ -61,6 +62,7 @@ $.ajax(settings).fail(function (response){
           <div class="well">
             <h3><b>Delete a Fruit</b><h3>
             <h5><I>Note: This action cannot be undone</I></h5>
+            <h6><I>If no such fruit exists... Nothing will happen</I><h6>
             <div class="form-group">
               <form action="/delEntry" method="get">
                 <label>Name:</label>
