@@ -20,11 +20,30 @@ app.get("/modifyEntry",function(req,res){
   var name = req.query.n;
   var price = req.query.p;
   var stock = req.query.s;
-  obj.push({"name":name,"price":price,"stock":stock});
+  var bool = 0;
+  var i=0;
+  for(i=0;i<obj.length;i++)
+  {
+    if(obj[i]["name"]==name)
+    {
+      bool = 1;
+      break;
+    }
+  }
+  if(bool)
+  {
+    //Fruit already present. Edit the same entry.
+    console.log(obj[i]);
+    obj[i]["price"] = price;
+    obj[i]["stock"] = stock;
+  }
+  else
+  {
+    //Fruit not present. Make a new entry.
+    obj.push({"name":name,"price":price,"stock":stock});
+  }
   var poo= JSON.stringify(obj);
   fs.writeFileSync('./data/data.json', poo);
-  console.log(obj);
-  console.log(poo);
 });
 
 app.listen(3000,function(){
