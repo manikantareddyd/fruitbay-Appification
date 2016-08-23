@@ -1,0 +1,52 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://127.0.0.1:3000/getData",
+  "method": "GET"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log("Poop");
+  var html = "";
+  var len = response.length;
+  var i = 0;
+  // console.log(response[0]["name"])
+  for(i=0;i<len;i++)
+  {
+    html = html + "<div class='well'><h3><b>"+response[i]["name"]+"</b></h3><h4>Price: "+response[i]["price"]+"</h4><h4>Stock: "+response[i]["stock"]+"</h4></div>";
+  }
+  console.log(html);
+  $(fruits).html(html);
+});
+$.ajax(settings).fail(function (response){
+  console.log("FUCK");
+});
+});
+</script>
+</head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Fruit Bay</h1>
+      </div>
+
+      <div class="row marketing">
+        <div id="fruits" class="col-lg-6">
+
+        </div>
+
+        <div id="edit" class="col-lg-6">
+         Boo
+        </div>
+      </div>
+    </div> <!-- /container -->
+
+</body>
+</html>
