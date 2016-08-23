@@ -2,11 +2,8 @@ var express = require('express');
 fs = require('fs');
 var app = express();
 
-var path = __dirname + '/views/';
-
-
 app.get("/",function(req,res){
-  res.sendFile(path + "index.html");
+  res.sendFile(__dirname + "/views/" + "index.html");
 });
 
 app.get("/getData",function(req,res){
@@ -14,7 +11,7 @@ app.get("/getData",function(req,res){
 });
 
 app.get("/delEntry",function(req,res){
-  res.send("LUL");
+  // res.send("LUL");
   var obj=JSON.parse(fs.readFileSync('./data/data.json').toString());
   console.log(obj);
   var name = req.query.n;
@@ -23,16 +20,21 @@ app.get("/delEntry",function(req,res){
   {
     if(obj[i]["name"] == name)
     {
+      //Found a fruit
       break;
     }
   }
-  obj.splice(i,1);
-  var poo= JSON.stringify(obj);
-  fs.writeFileSync('./data/data.json', poo);
+  if(i<obj.length)
+  {
+    obj.splice(i,1);
+    var poo= JSON.stringify(obj);
+    fs.writeFileSync('./data/data.json', poo);
+  }
+  res.redirect('/');
 });
 
 app.get("/modifyEntry",function(req,res){
-  res.send("LUL");
+  // res.send("LUL");
   var obj=JSON.parse(fs.readFileSync('./data/data.json').toString());
   console.log(obj);
   var name = req.query.n;
@@ -62,6 +64,7 @@ app.get("/modifyEntry",function(req,res){
   }
   var poo= JSON.stringify(obj);
   fs.writeFileSync('./data/data.json', poo);
+  res.redirect('/');
 });
 
 app.listen(3000,function(){
