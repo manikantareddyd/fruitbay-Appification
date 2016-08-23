@@ -13,6 +13,24 @@ app.get("/getData",function(req,res){
     res.sendFile(__dirname + "/data/"+"data.json");
 });
 
+app.get("/delEntry",function(req,res){
+  res.send("LUL");
+  var obj=JSON.parse(fs.readFileSync('./data/data.json').toString());
+  console.log(obj);
+  var name = req.query.n;
+  var i = 0;
+  for(i=0;i<obj.length;i++)
+  {
+    if(obj[i]["name"] == name)
+    {
+      break;
+    }
+  }
+  obj.splice(i,1);
+  var poo= JSON.stringify(obj);
+  fs.writeFileSync('./data/data.json', poo);
+});
+
 app.get("/modifyEntry",function(req,res){
   res.send("LUL");
   var obj=JSON.parse(fs.readFileSync('./data/data.json').toString());
