@@ -6,6 +6,6 @@
   },
   "dependencies" : {
     "express" : "latest",
-    "cors":"latest"
+    "fs":"latest"
   }
 }
