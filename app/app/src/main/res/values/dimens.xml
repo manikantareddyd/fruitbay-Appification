@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="name">17dp</dimen>
-    <dimen name="price">12dip</dimen>
-    <dimen name="stock">12dip</dimen>
+    <dimen name="name">32dp</dimen>
+    <dimen name="price">22dip</dimen>
+    <dimen name="stock">22dip</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 

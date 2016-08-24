@@ -8,11 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.StringRequest;
 import com.fruitbay.model.FruitsClass;
-import com.fruitbay.volleycustomlistview.AppController;
-import com.fruitbay.volleycustomlistview.R;
+import com.fruitbay.main.R;
 
 import java.util.List;
 

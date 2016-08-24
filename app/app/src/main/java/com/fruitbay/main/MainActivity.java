@@ -1,4 +1,4 @@
-package com.fruitbay.volleycustomlistview;
+package com.fruitbay.main;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
                                 fruitsClass.setStock(obj.getString("stock"));
                                 fruitsClass.setPrice(obj.getString("price"));
 
-                                // adding Billionaire to fruitsClass array
+                                // adding a fruit to fruitsClass array
                                 fruitsClassList.add(fruitsClass);
 
                             } catch (JSONException e) {
