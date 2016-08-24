@@ -2,10 +2,9 @@ package com.fruitbay.model;
 
 public class FruitsClass {
 
-    private String name, thumbnailUrl;
-    private int year;
-    private String source;
-    private String worth;
+    private String name;
+    private String stock;
+    private String  price;
 
     public String getName() {
         return name;
@@ -15,35 +14,12 @@ public class FruitsClass {
         this.name = name;
     }
 
-    public String getThumbnailUrl() {
-        return thumbnailUrl;
-    }
+    public String  getStock(){return stock;}
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
-    }
+    public void setStock(String stock){this.stock = stock;}
 
-    public int getYear() {
-        return year;
-    }
+    public String  getPrice(){return price;}
 
-    public void setYear(int year) {
-        this.year = year;
-    }
+    public void setPrice(String price){this.price = price;}
 
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    public String getWorth() {
-        return worth;
-    }
-
-    public void setWorth(String worth) {
-        this.worth = worth;
-    }
 }

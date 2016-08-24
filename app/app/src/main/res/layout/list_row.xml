@@ -5,24 +5,7 @@
     android:background="@drawable/list_row_selector"
     android:padding="8dp">
 
-    <!--&lt;!&ndash; Thumbnail Image &ndash;&gt;-->
-    <!--<com.android.volley.toolbox.NetworkImageView-->
-        <!--android:id="@+id/thumbnail"-->
-        <!--android:layout_width="80dp"-->
-        <!--android:layout_height="80dp"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_marginRight="8dp" />-->
-
-    <!-- Name of billionaire -->
-    <!--<TextView-->
-        <!--android:id="@+id/name"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignTop="@+id/thumbnail"-->
-        <!--android:layout_toRightOf="@+id/thumbnail"-->
-        <!--android:textSize="@dimen/name"-->
-        <!--android:textStyle="bold" />-->
-
+    <!-- Name -->
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
@@ -30,33 +13,23 @@
         android:textSize="@dimen/name"
         android:textStyle="bold" />
 
-    <!-- Worth -->
+    <!-- Price -->
     <TextView
-        android:id="@+id/worth"
+        android:id="@+id/price"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/name"
         android:layout_marginTop="1dip"
-        android:textSize="@dimen/worth" />
+        android:textSize="@dimen/price" />
 
-    <!-- Source -->
+    <!-- Stock -->
     <TextView
-        android:id="@+id/source"
+        android:id="@+id/stock"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/worth"
+        android:layout_below="@id/price"
         android:layout_marginTop="5dp"
-        android:textColor="@color/wealthsource"
-        android:textSize="@dimen/source" />
+        android:textSize="@dimen/stock" />
 
-    <!-- Year -->
-    <TextView
-        android:id="@+id/inYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:textColor="@color/year"
-        android:textSize="@dimen/InYear" />
 
 </RelativeLayout>

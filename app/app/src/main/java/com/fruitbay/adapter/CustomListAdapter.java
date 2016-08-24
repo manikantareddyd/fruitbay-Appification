@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.StringRequest;
 import com.fruitbay.model.FruitsClass;
 import com.fruitbay.volleycustomlistview.AppController;
 import com.fruitbay.volleycustomlistview.R;
@@ -19,22 +20,21 @@ public class CustomListAdapter extends BaseAdapter {
 
     private Activity activity;
     private LayoutInflater inflater;
-    private List<FruitsClass> billionairesItems;
-    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    private List<FruitsClass> fruitsItems;
 
-    public CustomListAdapter(Activity activity, List<FruitsClass> billionairesItems) {
+    public CustomListAdapter(Activity activity, List<FruitsClass> fruitsItems) {
         this.activity = activity;
-        this.billionairesItems = billionairesItems;
+        this.fruitsItems = fruitsItems;
     }
 
     @Override
     public int getCount() {
-        return billionairesItems.size();
+        return fruitsItems.size();
     }
 
     @Override
     public Object getItem(int location) {
-        return billionairesItems.get(location);
+        return fruitsItems.get(location);
     }
 
     @Override
@@ -48,35 +48,23 @@ public class CustomListAdapter extends BaseAdapter {
         if (inflater == null)
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         if (convertView == null)
             convertView = inflater.inflate(R.layout.list_row, null);
 
-        if (imageLoader == null)
-            imageLoader = AppController.getInstance().getImageLoader();
-//        NetworkImageView thumbNail = (NetworkImageView) convertView
-//                .findViewById(R.id.thumbnail);
+
         TextView name = (TextView) convertView.findViewById(R.id.name);
-        TextView worth = (TextView) convertView.findViewById(R.id.worth);
-        TextView source = (TextView) convertView.findViewById(R.id.source);
-        TextView year = (TextView) convertView.findViewById(R.id.inYear);
+        TextView price = (TextView) convertView.findViewById(R.id.price);
+        TextView stock = (TextView) convertView.findViewById(R.id.stock);
 
-        // getting billionaires data for the row
-        FruitsClass m = billionairesItems.get(position);
+        FruitsClass m = fruitsItems.get(position);
 
-        // thumbnail image
-//        thumbNail.setImageUrl(m.getThumbnailUrl(), imageLoader);
-
-        // name
         name.setText(m.getName());
 
-        // Wealth Source
-        source.setText("Wealth Source: " + String.valueOf(m.getSource()));
+        price.setText("Price: " + String.valueOf(m.getPrice()));
 
+        stock.setText("Stock: "+ String.valueOf(m.getStock()));
 
-        worth.setText(String.valueOf(m.getWorth()));
-
-        // release year
-//        year.setText(String.valueOf(m.getYear()));
 
         return convertView;
     }

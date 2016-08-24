@@ -26,7 +26,7 @@ app.get("/",function(req,res){
   res.sendFile(__dirname + "/views/" + "index.html");
 });
 
-app.get("/getData",function(req,res){
+app.get("/getData.json",function(req,res){
     res.sendFile(__dirname + "/data/"+"data.json");
 });
 

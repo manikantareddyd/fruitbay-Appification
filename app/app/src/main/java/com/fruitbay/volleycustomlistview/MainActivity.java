@@ -22,11 +22,9 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    // Log tag
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    // Billionaires json url
-    private static final String url = "https://raw.githubusercontent.com/mobilesiri/Android-Custom-Listview-Using-Volley/master/richman.json";
+    private static final String url = "http://172.24.1.14:3000/getData.json";
     private ProgressDialog pDialog;
     private List<FruitsClass> fruitsClassList = new ArrayList<FruitsClass>();
     private ListView listView;
@@ -47,7 +45,7 @@ public class MainActivity extends Activity {
         pDialog.show();
 
         // Creating volley request obj
-        JsonArrayRequest billionaireReq = new JsonArrayRequest(url,
+        JsonArrayRequest fruitReq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -61,10 +59,8 @@ public class MainActivity extends Activity {
                                 JSONObject obj = response.getJSONObject(i);
                                 FruitsClass fruitsClass = new FruitsClass();
                                 fruitsClass.setName(obj.getString("name"));
-                                fruitsClass.setThumbnailUrl(obj.getString("image"));
-                                fruitsClass.setWorth(obj.getString("worth"));
-                                fruitsClass.setYear(obj.getInt("InYear"));
-                                fruitsClass.setSource(obj.getString("source"));
+                                fruitsClass.setStock(obj.getString("stock"));
+                                fruitsClass.setPrice(obj.getString("price"));
 
                                 // adding Billionaire to fruitsClass array
                                 fruitsClassList.add(fruitsClass);
@@ -88,7 +84,7 @@ public class MainActivity extends Activity {
         });
 
         // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(billionaireReq);
+        AppController.getInstance().addToRequestQueue(fruitReq);
     }
 
     @Override
