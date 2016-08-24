@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private static final String url = "http://172.24.1.14:3000/getData.json";
+    private static final String url = "http://172.24.1.14:3000/getData";
     private ProgressDialog pDialog;
     private List<FruitsClass> fruitsClassList = new ArrayList<FruitsClass>();
     private ListView listView;
