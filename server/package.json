@@ -1,6 +1,6 @@
 {
   "name" : "fruit-bay",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "scripts" : {
     "start" : "node Server.js"
   },
