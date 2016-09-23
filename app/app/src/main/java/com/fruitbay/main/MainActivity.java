@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private static final String url = "http://172.24.1.14:3000/getData";
+    private static final String urlStats = "http://172.24.1.14:3000/getStats";
     private ProgressDialog pDialog;
     private List<FruitsClass> fruitsClassList = new ArrayList<FruitsClass>();
     private ListView listView;
@@ -75,8 +76,9 @@ public class MainActivity extends Activity {
 
                         }
 
-                        UpdateStats(fruitsClassList);
-                        
+//                        UpdateStats(fruitsClassList);
+                        Log.d(TAG,"HUMPTY DUMO");
+                        UpdateStatsServer();
                         // notifying list adapter about data changes
                         // so that it renders the list view with updated data
                         adapter.notifyDataSetChanged();
@@ -124,7 +126,47 @@ public class MainActivity extends Activity {
         costliestfruittxtview.setText(String.valueOf(forPriceList.get(0).getName()));
         TextView cheapestfruittxtview = (TextView) findViewById(R.id.cheapestfruit);
         cheapestfruittxtview.setText(String.valueOf(forPriceList.get(forPriceList.size()-1).getName()));
+    }
 
+    public void UpdateStatsServer(){
+        Log.d(TAG,"Humpty DUMO 2");
+        JsonArrayRequest statReq = new JsonArrayRequest(urlStats,
+            new Response.Listener<JSONArray>() {
+                public void onResponse(JSONArray response) {
+                    Log.d(TAG,"Humpty Dumo 3");
+                    Log.d(TAG, response.toString());
+                    hidePDialog();
+
+                    // Parsing json
+
+                        try {
+                            JSONObject obj = response.getJSONObject(0);
+                            TextView mostavailablefruittxtView = (TextView) findViewById(R.id.mostavailablefruit);
+                            mostavailablefruittxtView.setText(String.valueOf(obj.getString("mostavailablefruit")));
+                            TextView leastavailablefruittxtView = (TextView) findViewById(R.id.leastavailablefruit);
+                            leastavailablefruittxtView.setText(String.valueOf(obj.getString("leastavailablefruit")));
+
+                            TextView costliestfruittxtview = (TextView) findViewById(R.id.costliestfruit);
+                            costliestfruittxtview.setText(String.valueOf(obj.getString("costliestfruit")));
+                            TextView cheapestfruittxtview = (TextView) findViewById(R.id.cheapestfruit);
+                            cheapestfruittxtview.setText(String.valueOf(obj.getString("cheapestfruit")));
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                }
+            },
+            new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d(TAG,"Humpty Dumo 4");
+                    VolleyLog.d(TAG, "Error: " + error.getMessage());
+                    VolleyLog.d(TAG,"Jindasascdscxd");
+                    hidePDialog();
+                }
+            }
+        );
+        AppController.getInstance().addToRequestQueue(statReq);
     }
 
 }

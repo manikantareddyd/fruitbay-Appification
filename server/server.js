@@ -27,7 +27,11 @@ app.get("/",function(req,res){
 });
 
 app.get("/getData",function(req,res){
-    res.sendFile(__dirname + "/data/"+"data.json");
+  res.sendFile(__dirname + "/data/"+"data.json");
+});
+
+app.get("/getStats",function(req,res){
+  res.sendFile(__dirname+"/data/"+"testStats.json");
 });
 
 app.get("/delEntry",function(req,res){

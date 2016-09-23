@@ -32,17 +32,21 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fruitbay/main/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71014494">
-              <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.6292373">
+              <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#993#1006#0" expanded="true" />
-                <element signature="e#1693#3079#0" expanded="true" />
-                <element signature="e#3078#3079#0" expanded="true" />
-                <element signature="e#3081#3315#0" expanded="true" />
-                <element signature="e#3314#3315#0" expanded="true" />
-                <element signature="e#3828#3841#0" expanded="true" />
-                <element signature="e#4434#4447#0" expanded="true" />
+                <element signature="e#1072#1085#0" expanded="true" />
+                <element signature="e#1772#3230#0" expanded="true" />
+                <element signature="e#3229#3230#0" expanded="true" />
+                <element signature="e#3232#3466#0" expanded="true" />
+                <element signature="e#3465#3466#0" expanded="true" />
+                <element signature="e#3979#3992#0" expanded="true" />
+                <element signature="e#4585#4598#0" expanded="true" />
+                <element signature="e#5228#6654#0" expanded="true" />
+                <element signature="e#6653#6654#0" expanded="true" />
+                <element signature="e#6668#7029#0" expanded="true" />
+                <element signature="e#7028#7029#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fruitbay/model/FruitsClass.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -1741,6 +1745,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/fruitbay/model/FruitsClass.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fruitbay/model/CustomComparators.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/fruitbay/model/StatsClass.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/fruitbay/main/MainActivity.java" />
       </list>
     </option>
@@ -2201,7 +2206,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4933185" sideWeight="0.54957354" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16815145" sideWeight="0.45042643" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41091314" sideWeight="0.45042643" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.47547975" order="2" side_tool="false" content_ui="tabs" />
@@ -2276,14 +2281,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2317,13 +2314,17 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#993#1006#0" expanded="true" />
-            <element signature="e#1693#3079#0" expanded="true" />
-            <element signature="e#3078#3079#0" expanded="true" />
-            <element signature="e#3081#3315#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
-            <element signature="e#3828#3841#0" expanded="true" />
-            <element signature="e#4434#4447#0" expanded="true" />
+            <element signature="e#1072#1085#0" expanded="true" />
+            <element signature="e#1772#3230#0" expanded="true" />
+            <element signature="e#3229#3230#0" expanded="true" />
+            <element signature="e#3232#3466#0" expanded="true" />
+            <element signature="e#3465#3466#0" expanded="true" />
+            <element signature="e#3979#3992#0" expanded="true" />
+            <element signature="e#4585#4598#0" expanded="true" />
+            <element signature="e#5228#6654#0" expanded="true" />
+            <element signature="e#6653#6654#0" expanded="true" />
+            <element signature="e#6668#7029#0" expanded="true" />
+            <element signature="e#7028#7029#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2414,13 +2415,17 @@
           <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#993#1006#0" expanded="true" />
-            <element signature="e#1693#3079#0" expanded="true" />
-            <element signature="e#3078#3079#0" expanded="true" />
-            <element signature="e#3081#3315#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
-            <element signature="e#3828#3841#0" expanded="true" />
-            <element signature="e#4434#4447#0" expanded="true" />
+            <element signature="e#1072#1085#0" expanded="true" />
+            <element signature="e#1772#3230#0" expanded="true" />
+            <element signature="e#3229#3230#0" expanded="true" />
+            <element signature="e#3232#3466#0" expanded="true" />
+            <element signature="e#3465#3466#0" expanded="true" />
+            <element signature="e#3979#3992#0" expanded="true" />
+            <element signature="e#4585#4598#0" expanded="true" />
+            <element signature="e#5228#6654#0" expanded="true" />
+            <element signature="e#6653#6654#0" expanded="true" />
+            <element signature="e#6668#7029#0" expanded="true" />
+            <element signature="e#7028#7029#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2690,14 +2695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fruitbay/model/FruitsClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fruitbay/model/CustomComparators.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2706,19 +2703,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fruitbay/model/FruitsClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fruitbay/main/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71014494">
-          <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.6292373">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#993#1006#0" expanded="true" />
-            <element signature="e#1693#3079#0" expanded="true" />
-            <element signature="e#3078#3079#0" expanded="true" />
-            <element signature="e#3081#3315#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
-            <element signature="e#3828#3841#0" expanded="true" />
-            <element signature="e#4434#4447#0" expanded="true" />
+            <element signature="e#1072#1085#0" expanded="true" />
+            <element signature="e#1772#3230#0" expanded="true" />
+            <element signature="e#3229#3230#0" expanded="true" />
+            <element signature="e#3232#3466#0" expanded="true" />
+            <element signature="e#3465#3466#0" expanded="true" />
+            <element signature="e#3979#3992#0" expanded="true" />
+            <element signature="e#4585#4598#0" expanded="true" />
+            <element signature="e#5228#6654#0" expanded="true" />
+            <element signature="e#6653#6654#0" expanded="true" />
+            <element signature="e#6668#7029#0" expanded="true" />
+            <element signature="e#7028#7029#0" expanded="true" />
           </folding>
         </state>
       </provider>
