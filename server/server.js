@@ -31,7 +31,23 @@ app.get("/getData",function(req,res){
 });
 
 app.get("/getStats",function(req,res){
-  res.sendFile(__dirname+"/data/"+"testStats.json");
+
+  var obj=JSON.parse(fs.readFileSync('./data/data.json').toString());
+  var obj2=JSON.parse(fs.readFileSync('./data/data.json').toString());
+  //price sort
+  obj.sort(comparePrice);
+  //stock sort
+  obj2.sort(compareStock);
+
+  outobj = JSON.parse(fs.readFileSync('./data/testStats.json').toString());
+  
+  outobj[0]["cheapestfruit"] = obj[0]["name"]
+  outobj[0]["costliestfruit"] = obj[obj.length-1]["name"]
+  outobj[0]["leastavailablefruit"] = obj2[0]["name"]
+  outobj[0]["mostavailablefruit"] = obj2[obj2.length-1]["name"]
+  
+  fs.writeFileSync('./data/testStats2.json', JSON.stringify(outobj));
+  res.sendFile(__dirname+"/data/"+"testStats2.json");
 });
 
 app.get("/delEntry",function(req,res){
@@ -94,3 +110,20 @@ app.get("/modifyEntry",function(req,res){
 app.listen(3000,"172.24.1.14",function(){
   console.log("Live at Port 3000");
 });
+
+
+function comparePrice(a,b) {
+  if (parseFloat(a.price) < parseFloat(b.last_nom))
+    return -1;
+  if (parseFloat(a.price) > parseFloat(b.last_nom))
+    return 1;
+  return 0;
+}
+
+function compareStock(a,b) {
+  if (parseInt(a.price) < parseInt(b.last_nom))
+    return -1;
+  if (parseInt(a.price) > parseInt(b.last_nom))
+    return 1;
+  return 0;
+}

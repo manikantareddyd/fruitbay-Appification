@@ -3,6 +3,7 @@ package com.fruitbay.main;
 import java.util.Comparator;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -76,9 +77,11 @@ public class MainActivity extends Activity {
 
                         }
 
-//                        UpdateStats(fruitsClassList);
-                        Log.d(TAG,"HUMPTY DUMO");
-                        UpdateStatsServer();
+                        BatteryManager bm = (BatteryManager)getSystemService(BATTERY_SERVICE);
+                        int batLevel = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+                        if(batLevel < 25) UpdateStats(fruitsClassList);
+                        else UpdateStatsServer();
+
                         // notifying list adapter about data changes
                         // so that it renders the list view with updated data
                         adapter.notifyDataSetChanged();
@@ -129,11 +132,10 @@ public class MainActivity extends Activity {
     }
 
     public void UpdateStatsServer(){
-        Log.d(TAG,"Humpty DUMO 2");
-        JsonArrayRequest statReq = new JsonArrayRequest(urlStats,
+        JsonArrayRequest statsReq = new JsonArrayRequest(urlStats,
             new Response.Listener<JSONArray>() {
+                @Override
                 public void onResponse(JSONArray response) {
-                    Log.d(TAG,"Humpty Dumo 3");
                     Log.d(TAG, response.toString());
                     hidePDialog();
 
@@ -159,14 +161,12 @@ public class MainActivity extends Activity {
             new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.d(TAG,"Humpty Dumo 4");
                     VolleyLog.d(TAG, "Error: " + error.getMessage());
-                    VolleyLog.d(TAG,"Jindasascdscxd");
                     hidePDialog();
                 }
             }
         );
-        AppController.getInstance().addToRequestQueue(statReq);
+        AppController.getInstance().addToRequestQueue(statsReq);
     }
 
 }
