@@ -5,36 +5,30 @@ import java.util.Comparator;
 /**
  * Created by ManikantaReddyD on 23-Sep-16.
  */
-public class CustomComparators {
+public  class CustomComparators {
 
-    public class stockComparatorAscending implements Comparator<FruitsClass>
+    public static class stockComparatorAscending implements Comparator<FruitsClass>
     {
-        public int compare(FruitsClass o1, FruitsClass o2)
-        {
-            return Integer.valueOf(o1.getStock()).compareTo(Integer.valueOf(o2.getStock()));
-        }
-    }
-
-    public class stockComparatorDescending implements Comparator<FruitsClass>
-    {
+        @Override
         public int compare(FruitsClass o1, FruitsClass o2)
         {
             return Integer.valueOf(o2.getStock()).compareTo(Integer.valueOf(o1.getStock()));
         }
     }
 
-    public class PriceComparatorAscending implements Comparator<FruitsClass>
+
+    public static class PriceComparatorAscending implements Comparator<FruitsClass>
     {
         public int compare(FruitsClass o1, FruitsClass o2)
         {
-            return Float.valueOf(o1.getPrice()).compareTo(Float.valueOf(o2.getPrice()));
+//            return Float.valueOf(o1.getPrice()).compareTo(Float.valueOf(o2.getPrice()));
+            float change1 = Float.valueOf(o1.getPrice());
+            float change2 = Float.valueOf(o2.getPrice());
+
+            if (change1 > change2) return -1;
+            if (change1 < change2) return 1;
+            return 0;
         }
     }
-    public class PriceComparatorDescending implements Comparator<FruitsClass>
-    {
-        public int compare(FruitsClass o1, FruitsClass o2)
-        {
-            return Float.valueOf(o2.getPrice()).compareTo(Float.valueOf(o1.getPrice()));
-        }
-    }
+
 }

@@ -1,7 +1,1 @@
-[
-  {"name":"Opium","price":"1","stock":"1"},
-  {"name":"Apple","price":"12","stock":"1"},
-  {"name":"Grapes","price":"12.33","stock":"21"},
-  {"name":"Santra","price":"1212","stock":"13234"},
-  {"name":"Mosambi","price":"23.44","stock":"2131"}
-]
+[{"name":"Opium","price":"13","stock":"1"},{"name":"Apple","price":"12","stock":"2"},{"name":"Grapes","price":"12.33","stock":"21"},{"name":"Santra","price":"21","stock":"13234"},{"name":"Mosambi","price":"23.44","stock":"2131"}]
