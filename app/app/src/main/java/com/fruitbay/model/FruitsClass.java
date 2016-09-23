@@ -3,8 +3,8 @@ package com.fruitbay.model;
 public class FruitsClass {
 
     private String name;
-    private String stock;
-    private String  price;
+    private int stock;
+    private float  price;
 
     public String getName() {
         return name;
@@ -14,12 +14,12 @@ public class FruitsClass {
         this.name = name;
     }
 
-    public String  getStock(){return stock;}
+    public int  getStock(){return stock;}
 
-    public void setStock(String stock){this.stock = stock;}
+    public void setStock(String stock){this.stock = Integer.parseInt(stock);}
 
-    public String  getPrice(){return price;}
+    public float  getPrice(){return price;}
 
-    public void setPrice(String price){this.price = price;}
+    public void setPrice(String price){this.price = Float.parseFloat(price);}
 
 }

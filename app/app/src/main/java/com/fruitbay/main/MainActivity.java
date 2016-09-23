@@ -1,10 +1,12 @@
 package com.fruitbay.main;
 
+import java.util.Comparator;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -12,12 +14,14 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.fruitbay.adapter.CustomListAdapter;
 import com.fruitbay.model.FruitsClass;
+//import com.fruitbay.model.CustomComparators;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -30,6 +34,49 @@ public class MainActivity extends Activity {
     private ListView listView;
     private CustomListAdapter adapter;
 
+    public class stockComparatorAscending implements Comparator<FruitsClass>
+    {
+        @Override
+        public int compare(FruitsClass o1, FruitsClass o2)
+        {
+            return Integer.valueOf(o1.getStock()).compareTo(Integer.valueOf(o2.getStock()));
+        }
+    }
+
+    public class stockComparatorDescending implements Comparator<FruitsClass>
+    {
+        public int compare(FruitsClass o1, FruitsClass o2)
+        {
+            return Integer.valueOf(o2.getStock()).compareTo(Integer.valueOf(o1.getStock()));
+        }
+    }
+
+    public class PriceComparatorAscending implements Comparator<FruitsClass>
+    {
+        public int compare(FruitsClass o1, FruitsClass o2)
+        {
+//            return Float.valueOf(o1.getPrice()).compareTo(Float.valueOf(o2.getPrice()));
+            float change1 = Float.valueOf(o1.getPrice());
+            float change2 = Float.valueOf(o2.getPrice());
+
+            if (change1 > change2) return -1;
+            if (change1 < change2) return 1;
+            return 0;
+        }
+    }
+    public class PriceComparatorDescending implements Comparator<FruitsClass>
+    {
+        public int compare(FruitsClass o1, FruitsClass o2)
+        {
+//            return Float.valueOf(o2.getPrice()).compareTo(Float.valueOf(o1.getPrice()));
+            float change1 = Float.valueOf(o1.getPrice());
+            float change2 = Float.valueOf(o2.getPrice());
+
+            if (change1 < change2) return -1;
+            if (change1 > change2) return 1;
+            return 0;
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +117,24 @@ public class MainActivity extends Activity {
                             }
 
                         }
+                        List<FruitsClass> forStockList=new ArrayList<FruitsClass>(fruitsClassList);
+                        Collections.sort(forStockList,new stockComparatorDescending());
+                        TextView mostavailablefruittxtView = (TextView) findViewById(R.id.mostavailablefruit);
+                        mostavailablefruittxtView.setText(String.valueOf(forStockList.get(0).getName()));
+
+                        Collections.sort(forStockList,new stockComparatorAscending());
+                        TextView leastavailablefruittxtView = (TextView) findViewById(R.id.leastavailablefruit);
+                        leastavailablefruittxtView.setText(String.valueOf(forStockList.get(0).getName()));
+
+                        List<FruitsClass> forPriceList=new ArrayList<FruitsClass>(fruitsClassList);
+                        Collections.sort(forPriceList,new PriceComparatorAscending());
+                        TextView costliestfruittxtview = (TextView) findViewById(R.id.costliestfruit);
+                        costliestfruittxtview.setText(String.valueOf(forPriceList.get(0).getName()));
+
+                        Collections.sort(forPriceList,new PriceComparatorDescending());
+                        TextView cheapestfruittxtview = (TextView) findViewById(R.id.cheapestfruit);
+                        cheapestfruittxtview.setText(String.valueOf(forPriceList.get(0).getName()));
+
 
                         // notifying list adapter about data changes
                         // so that it renders the list view with updated data

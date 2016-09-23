@@ -10,9 +10,92 @@
         android:text="Fruit Bay"
         android:padding="48dp"
         android:textSize="96dp"/>
+    <TextView
+        android:id="@+id/cheapestfruittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/overlay"
+        android:text="Cheapest Fruit"
+        android:padding="12dp"
+        android:textSize="24dp"/>
+    <TextView
+        android:id="@+id/cheapestfruit"
+        android:layout_toRightOf="@id/cheapestfruittext"
+        android:layout_below="@+id/overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOL"
+        android:padding="12dp"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:id="@+id/costliestfruittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cheapestfruit"
+        android:text="Costliest Fruit"
+        android:padding="12dp"
+        android:textSize="24dp"/>
+    <TextView
+        android:id="@+id/costliestfruit"
+        android:layout_toRightOf="@id/costliestfruittext"
+        android:layout_below="@+id/cheapestfruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOL"
+        android:padding="12dp"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:id="@+id/mostavailablefruittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/costliestfruit"
+        android:text="Most Available Fruit"
+        android:padding="12dp"
+        android:textSize="24dp"/>
+    <TextView
+        android:id="@+id/mostavailablefruit"
+        android:layout_toRightOf="@id/mostavailablefruittext"
+        android:layout_below="@+id/costliestfruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOL"
+        android:padding="12dp"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:id="@+id/leastavailablefruittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mostavailablefruit"
+        android:text="Leaset Available Fruit"
+        android:padding="12dp"
+        android:textSize="24dp"/>
+    <TextView
+        android:id="@+id/leastavailablefruit"
+        android:layout_toRightOf="@id/leastavailablefruittext"
+        android:layout_below="@+id/mostavailablefruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOL"
+        android:padding="12dp"
+        android:textSize="24dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
     <ListView
         android:id="@+id/list"
-        android:layout_below="@+id/overlay"
+        android:layout_below="@+id/leastavailablefruit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:divider="@color/list_divider"
