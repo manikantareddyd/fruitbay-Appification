@@ -113,17 +113,17 @@ app.listen(3000,"172.24.1.14",function(){
 
 
 function comparePrice(a,b) {
-  if (parseFloat(a.price) < parseFloat(b.last_nom))
+  if (parseFloat(a["price"]) < parseFloat(b["price"]))
     return -1;
-  if (parseFloat(a.price) > parseFloat(b.last_nom))
+  if (parseFloat(a["price"]) > parseFloat(b["price"]))
     return 1;
   return 0;
 }
 
 function compareStock(a,b) {
-  if (parseInt(a.price) < parseInt(b.last_nom))
+  if (parseInt(a["stock"]) < parseInt(b["stock"]))
     return -1;
-  if (parseInt(a.price) > parseInt(b.last_nom))
+  if (parseInt(a["stock"]) > parseInt(b["stock"]))
     return 1;
   return 0;
 }
