@@ -5,7 +5,7 @@
         jar="D:\fruitbay\app\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="21.1.1"
-        sha1="78901f05fb2a7963fd5794c432a0a7e7d1755a73">
+        sha1="a7528c3639365823e281c53ce5d2a408544ad91f">
         <dex dex="D:\fruitbay\app\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_d62d55d52497c432699b15d7210902453ed24b24\classes.dex" />
     </item>
     <item
@@ -26,7 +26,7 @@
         jar="D:\fruitbay\app\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="21.1.1"
-        sha1="810d5cb8a55bb481661efba86f3d15812fca2542">
+        sha1="c817871d923de59afb60f7816a91b81438f23837">
         <dex dex="D:\fruitbay\app\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7d9399fc2463184f42c793889f8a794b93297ea2\classes.dex" />
     </item>
     <item
