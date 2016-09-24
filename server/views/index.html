@@ -4,37 +4,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-    var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "http://172.24.1.14:3000/getData",
-  "method": "GET"
-}
-
-$.ajax(settings).done(function (response) {
-  var html = "<div class='well'><h3><b>List of all fruits</b></h3></div>";
-  var len = response.length;
-  var i = 0;
-  for(i=0;i<len;i++)
-  {
-    html = html + "<div class='well'><h3><b>"+
-    response[i]["name"]+
-    "</b></h3><h4>Price: "+
-    response[i]["price"]+
-    "</h4><h4>Stock: "+
-    response[i]["stock"]+
-    "</h4></div>";
-  }
-  $(fruits).html(html);
-});
-$.ajax(settings).fail(function (response){
-  html = "<div class='well'><h4><I>The server seems to be a bit busy. Try again later. </I></h4></div>";
-  $(fruits).html(html);
-});
-});
-</script>
+<script src="data.js"></script>
+<script src="stats.js"></script>
 </head>
   <body>
     <div class="container">
@@ -43,11 +14,11 @@ $.ajax(settings).fail(function (response){
       </div>
 
       <div class="row marketing">
-        <div id="fruits" class="col-md-6">
-
-        </div>
-
+        
         <div id="edit" class="col-md-6">
+          <div id="stats">
+
+          </div>
           <div class="well">
             <h3><b>Add or Modify a Fruit Entry</b></h3>
             <h5><I>It is mandatory to fill all fields</I></h5>
@@ -78,6 +49,9 @@ $.ajax(settings).fail(function (response){
               </form>
             </div>
           </div>
+        </div>
+        <div id="fruits" class="col-md-6">
+
         </div>
       </div>
     </div> <!-- /container -->

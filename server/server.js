@@ -107,6 +107,14 @@ app.get("/modifyEntry",function(req,res){
   res.redirect('/');
 });
 
+app.get("/data.js",function(req,res){
+  res.sendFile(__dirname+"/views/"+"data.js")
+});
+
+app.get("/stats.js",function(req,res){
+  res.sendFile(__dirname+"/views/"+"stats.js")
+});
+
 app.listen(3000,"172.24.1.14",function(){
   console.log("Live at Port 3000");
 });
