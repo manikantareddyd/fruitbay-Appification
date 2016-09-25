@@ -1,3 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\fruitbay\app\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="21.1.1"
+        sha1="d2d7a71944fa733028aebfac59cb16112fcf19d0">
+        <dex dex="D:\fruitbay\app\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_d62d55d52497c432699b15d7210902453ed24b24\classes.dex" />
+    </item>
+    <item
+        jar="D:\fruitbay\app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="D:\fruitbay\app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-22.1.1_7dbfc2fbbba3bb5723936a6d292161fb5a8f735d\classes.dex" />
+    </item>
+    <item
+        jar="D:\fruitbay\app\app\build\intermediates\exploded-aar\com.mcxiaoke.volley\library-aar\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.1"
+        sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
+        <dex dex="D:\fruitbay\app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mcxiaoke.volley-library-aar-1.0.0_00e58b6e82d0495a2fb670538c6558cdb99f3b62\classes.dex" />
+    </item>
+    <item
+        jar="D:\fruitbay\app\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="21.1.1"
+        sha1="308a0db2ac2d0ee89b9eafad9f852675e38a1fc4">
+        <dex dex="D:\fruitbay\app\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7d9399fc2463184f42c793889f8a794b93297ea2\classes.dex" />
+    </item>
+    <item
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jumboMode="true"
+        revision="21.1.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="D:\fruitbay\app\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-22.1.1_698f9e7179e3fde94c6a0d0998c2e81a6bdd81b7\classes.dex" />
+    </item>
+    <item
+        jar="D:\fruitbay\app\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="D:\fruitbay\app\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.1.1_735170e1bb6df245a6107ae29f575a6114d94e56\classes.dex" />
+    </item>
+    <item
+        jar="D:\fruitbay\app\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
+        jumboMode="true"
+        revision="21.1.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="D:\fruitbay\app\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.1.1_9d9511043c0d5991166f1dcaa0f67d11a0b6aebe\classes.dex" />
+    </item>
+
+</items>
