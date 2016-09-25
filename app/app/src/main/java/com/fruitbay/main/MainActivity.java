@@ -2,7 +2,10 @@ package com.fruitbay.main;
 
 import java.util.Comparator;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.ProgressDialog;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.fruitbay.adapter.CustomListAdapter;
 import com.fruitbay.model.FruitsClass;
 import com.fruitbay.model.CustomComparators;
@@ -28,7 +32,7 @@ import java.util.List;
 public class MainActivity extends Activity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-
+    public  double startTime;
     private static final String url = "http://172.24.1.14:3000/getData";
     private static final String urlStats = "http://172.24.1.14:3000/getStats";
     private ProgressDialog pDialog;
@@ -77,13 +81,26 @@ public class MainActivity extends Activity {
 
                         }
 
+                        startTime = System.currentTimeMillis();
+
                         BatteryManager bm = (BatteryManager)getSystemService(BATTERY_SERVICE);
                         int batLevel = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
-                        if(batLevel < 25) UpdateStats(fruitsClassList);
-                        else UpdateStatsServer();
 
-                        // notifying list adapter about data changes
-                        // so that it renders the list view with updated data
+                        ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
+                        ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+                        activityManager.getMemoryInfo(mi);
+                        double RamPercentAvail = 100.0*mi.availMem/(float)mi.totalMem ;
+
+                        Log.d(TAG,"Ram Usage: "+String.valueOf(RamPercentAvail));
+
+                        if(batLevel < 25 || RamPercentAvail < 25 )
+                            UpdateStatsServer();
+                        else{
+                            UpdateStats(fruitsClassList);
+                            double endTime = System.currentTimeMillis();
+                            Log.d(TAG,"Time Taken: "+String.valueOf(endTime-startTime));
+                        }
+
                         adapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
@@ -132,6 +149,7 @@ public class MainActivity extends Activity {
     }
 
     public void UpdateStatsServer(){
+
         JsonArrayRequest statsReq = new JsonArrayRequest(urlStats,
             new Response.Listener<JSONArray>() {
                 @Override
@@ -152,6 +170,9 @@ public class MainActivity extends Activity {
                             costliestfruittxtview.setText(String.valueOf(obj.getString("costliestfruit")));
                             TextView cheapestfruittxtview = (TextView) findViewById(R.id.cheapestfruit);
                             cheapestfruittxtview.setText(String.valueOf(obj.getString("cheapestfruit")));
+
+                            double endTime = System.currentTimeMillis();
+                            Log.d(TAG,"Time Taken: "+String.valueOf(endTime-startTime));
 
                         } catch (JSONException e) {
                             e.printStackTrace();
